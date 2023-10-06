@@ -30,4 +30,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # token
 
-git remote set-url origin https://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@github.com/dhpLose/business-component.git/
+git remote set-url origin https://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@github.com/dhpLose/business.git/
