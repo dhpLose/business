@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <m-form :item="form_item" :field="form_field" :button="form_button" :before-submit="submitForm" />
+    <m-form :list="form_item" :field="form_field" :button="form_button" :before-submit="submitForm" />
   </div>
 </template>
 <script>
@@ -32,9 +32,97 @@ export default {
       },
       form_item: [
         {
+          type: 'selectCalendar',
+          prop: '',
+          span: 12,
+          label: '树形结构多选：',
+          required: true,
+          message: '请勾选',
+          rules: [
+          ],
+          callback: (data) => {
+            // console.log(data)
+          },
+          options: [
+            {
+              id: 1,
+              label: '节点1',
+              children: [
+                {
+                  id: 2,
+                  label: '节点1-1'
+                },
+                {
+                  id: 3,
+                  label: '节点1-2'
+                }
+              ]
+            },
+            {
+              id: 4,
+              label: '节点2',
+              children: [
+                {
+                  id: 5,
+                  label: '节点2-1'
+                },
+                {
+                  id: 6,
+                  label: '节点2-2'
+                }
+              ]
+            },
+            {
+              id: 115,
+              label: '节点115'
+            },
+            {
+              id: 116,
+              label: '节点116'
+            },
+            {
+              id: 7,
+              label: '节点7'
+            },
+            {
+              id: 8,
+              label: '节点8'
+            },
+            {
+              id: 9,
+              label: '节点8'
+            },
+            {
+              id: 10,
+              label: '节点10'
+            },
+            {
+              id: 11,
+              label: '节点11'
+            },
+            {
+              id: 12,
+              label: '节点12'
+            },
+            {
+              id: 13,
+              label: '节点13'
+            },
+            {
+              id: 14,
+              label: '节点14'
+            },
+            {
+              id: 15,
+              label: '节点15'
+            }
+          ]
+        },
+        {
           type: 'upload',
-          model: 'card',
+          model: 'button',
           prop: 'file',
+          span: 12,
           limit: 11,
           multiple: true,
           label: '上传图片',
@@ -52,6 +140,7 @@ export default {
         {
           type: 'input',
           prop: 'name',
+          span: 12,
           label: '活动名称',
           required: true,
           message: '请输入活动名称',
@@ -64,6 +153,7 @@ export default {
         {
           type: 'switch',
           prop: 'switch',
+          span: 12,
           label: '开关',
           required: true,
           message: '请选择开关',
@@ -76,6 +166,7 @@ export default {
         {
           type: 'select',
           prop: 'class_room',
+          span: 12,
           label: '教室',
           required: true,
           props: {
@@ -90,6 +181,7 @@ export default {
         {
           type: 'select',
           prop: 'class_room1',
+          span: 12,
           label: '教室-1',
           required: true,
           callbackRequest: () => {
@@ -110,6 +202,7 @@ export default {
         {
           type: 'checkbox',
           prop: 'car',
+          span: 12,
           label: '交通工具',
           required: true,
           options: [
@@ -121,6 +214,7 @@ export default {
           type: 'radio',
           prop: 'food',
           label: '食物',
+          span: 12,
           required: true,
           options: [
             { label: 'vue.js', value: '1' },
@@ -131,6 +225,7 @@ export default {
           type: 'date',
           model: 'date', // year/month/date/week/ datetime/datetimerange/daterange
           prop: 'createDate',
+          span: 12,
           label: '日期',
           required: true,
           disabled_date: false,
